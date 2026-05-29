@@ -1,87 +1,116 @@
 # Product Review Classifier
 
-A Machine Learning based Product Review Classifier that uses Natural Language Processing (NLP) techniques to analyze customer reviews and classify sentiments as **Positive**, **Negative**, or **Neutral**. Built using Python, Scikit-learn, Streamlit, FastAPI, Docker, HTML, CSS, and JavaScript for real-time sentiment prediction and customer feedback analysis.
+A Machine Learning based Product Review Classifier application that predicts sentiment/review category using a FastAPI backend and Streamlit frontend.
 
 ---
 
-## Features
+# Tech Stack
 
-* Sentiment Analysis using Machine Learning
-* NLP-based text preprocessing
-* Real-time review prediction
-* Interactive Streamlit frontend
-* Backend API integration
-* Docker support for deployment
-* Clean and scalable project structure
-
----
-
-## Tech Stack
-
-### Frontend
-
-* Streamlit
-* HTML
-* CSS
-* JavaScript
-
-### Backend
-
-* FastAPI
 * Python
-
-### Machine Learning
-
+* FastAPI
+* Streamlit
 * Scikit-learn
-* NLP
-* Pickle
-
-### Deployment
-
 * Docker
 * Docker Compose
-* GitHub
-* Vercel
 
 ---
 
-## Project Structure
+# Project Structure
 
-```bash
-PRODUCT_REVIEW_CLASSIFIER/
+```text
+product_review_classifier/
 │
-├── api/
-│   ├── main.py
-│   ├── Dockerfile
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-│
-├── model/
-│   ├── train.py
-│   ├── model.pkl
-│   ├── vectorizer.pkl
-│   └── requirements.txt
-│
+├── api/                 # FastAPI backend
+├── frontend/            # Streamlit frontend
+├── model/               # Trained ML models
 ├── docker-compose.yml
-└── README.md
+├── README.md
 ```
 
 ---
 
-## Installation
+# Features
 
-### Clone the Repository
+* Product review classification
+* FastAPI REST backend
+* Streamlit interactive UI
+* Dockerized application
+* Easy deployment and setup
+
+---
+
+# Clone Repository
 
 ```bash
-git clone https://github.com/your-username/product-review-classifier.git
+git clone https://github.com/droy65/product-review-classifier.git
+```
+
+Move into project folder:
+
+```bash
 cd product-review-classifier
 ```
 
 ---
+
+# Run Using Docker (Recommended)
+
+## Prerequisites
+
+Install:
+
+* Docker Desktop
+
+Check Docker installation:
+
+```bash
+docker --version
+docker compose version
+```
+
+---
+
+## Start Application
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Access Application
+
+### Frontend (Streamlit)
+
+```text
+http://localhost:8501
+```
+
+### Backend API
+
+```text
+http://localhost:8000
+```
+
+---
+
+## Stop Containers
+
+Press:
+
+```text
+Ctrl + C
+```
+
+Then run:
+
+```bash
+docker compose down
+```
+
+---
+
+# Manual Setup (Without Docker)
 
 ## Create Virtual Environment
 
@@ -89,113 +118,103 @@ cd product-review-classifier
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate
 ```
 
-### Linux / Mac
+Activate environment:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-### Backend
-
-```bash
-cd api
-pip install -r requirements.txt
-```
-
-### Frontend
-
-```bash
-cd frontend
-pip install -r requirements.txt
-```
-
-### Model
-
-```bash
-cd model
-pip install -r requirements.txt
+.\.venv\Scripts\activate
 ```
 
 ---
 
-## Run Backend Server
+# Install Dependencies
+
+## Backend Requirements
+
+```bash
+pip install -r api/requirements.txt
+```
+
+## Frontend Requirements
+
+```bash
+pip install -r frontend/requirements.txt
+```
+
+---
+
+# Run Backend
+
+Move to API folder:
 
 ```bash
 cd api
+```
+
+Start FastAPI server:
+
+```bash
 uvicorn main:app --reload
 ```
 
-Backend URL:
+Backend runs on:
 
-```bash
+```text
 http://127.0.0.1:8000
 ```
 
 ---
 
-## Run Frontend
+# Run Frontend
+
+Open a NEW terminal.
+
+Move to project folder:
 
 ```bash
-cd frontend
-streamlit run app.py --server.port=8501
+cd product-review-classifier
 ```
 
-Frontend URL:
+Activate environment:
 
 ```bash
+.\.venv\Scripts\activate
+```
+
+Run Streamlit app:
+
+```bash
+streamlit run frontend/app.py --server.port=8501
+```
+
+Frontend runs on:
+
+```text
 http://localhost:8501
 ```
 
 ---
 
-## Docker Setup
+# API Endpoint
 
-Run the application using Docker Compose:
+## Predict Review
 
-```bash
-docker-compose up --build
+```http
+POST /predict
 ```
 
----
 
-## Train the Model
+# Example Technologies Used
 
-```bash
-cd model
-python train.py
-```
+* FastAPI
+* Streamlit
+* Scikit-learn
+* Pandas
+* NumPy
+* Docker
 
-This generates:
 
-* `model.pkl`
-* `vectorizer.pkl`
 
----
-
-## Sample Predictions
-
-| Review                                | Sentiment |
-| ------------------------------------- | --------- |
-| Amazing product and excellent quality | Positive  |
-| Worst product I have ever used        | Negative  |
-| Product is okay for the price         | Neutral   |
-
----
-
-## Future Improvements
-
-* Deep Learning integration
-* Multi-language sentiment analysis
-* User authentication system
-* Database integration
-* Analytics dashboard
-* Cloud deployment support
-
+GitHub:
+https://github.com/droy65
