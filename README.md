@@ -199,15 +199,3 @@ This generates:
 * Analytics dashboard
 * Cloud deployment support
 
----
-
-## Author
-
-**Diya Roy**
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
