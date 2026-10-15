@@ -8,9 +8,6 @@ __pycache__/
 .venv/
 venv/
 
-# Model files (optional)
-*.pkl
-
 # Streamlit
 .streamlit/
 
@@ -19,3 +16,4 @@ venv/
 
 # OS
 .DS_Store
+Thumbs.db

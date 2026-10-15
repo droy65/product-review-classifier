@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./model:/app/model
+      - ./data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
 
@@ -18,6 +19,8 @@ services:
       dockerfile: frontend/Dockerfile
     ports:
       - "8501:8501"
+    volumes:
+      - ./data:/app/data
     environment:
       - API_URL=http://api:8000
     depends_on:

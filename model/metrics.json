@@ -1,0 +1,293 @@
+{
+  "model_type": "Logistic Regression with Negation-Aware TF-IDF",
+  "trained_at": "2026-10-15 18:27:58",
+  "dataset_total_samples": 35000,
+  "train_samples": 28000,
+  "test_samples": 7000,
+  "vocabulary_size": 40000,
+  "ngram_range": [
+    1,
+    2
+  ],
+  "accuracy": 0.8926,
+  "precision": 0.8895,
+  "recall": 0.8966,
+  "f1_score": 0.893,
+  "confusion_matrix": {
+    "true_negative": 3110,
+    "false_positive": 390,
+    "false_negative": 362,
+    "true_positive": 3138
+  },
+  "classification_report": {
+    "Negative": {
+      "precision": 0.8957373271889401,
+      "recall": 0.8885714285714286,
+      "f1-score": 0.8921399885255307,
+      "support": 3500.0
+    },
+    "Positive": {
+      "precision": 0.8894557823129252,
+      "recall": 0.8965714285714286,
+      "f1-score": 0.8929994308480365,
+      "support": 3500.0
+    },
+    "accuracy": 0.8925714285714286,
+    "macro avg": {
+      "precision": 0.8925965547509327,
+      "recall": 0.8925714285714286,
+      "f1-score": 0.8925697096867835,
+      "support": 7000.0
+    },
+    "weighted avg": {
+      "precision": 0.8925965547509326,
+      "recall": 0.8925714285714286,
+      "f1-score": 0.8925697096867835,
+      "support": 7000.0
+    }
+  },
+  "top_positive_features": [
+    {
+      "word": "great",
+      "weight": 12.87
+    },
+    {
+      "word": "best",
+      "weight": 9.709
+    },
+    {
+      "word": "excellent",
+      "weight": 9.389
+    },
+    {
+      "word": "love",
+      "weight": 7.557
+    },
+    {
+      "word": "perfect",
+      "weight": 7.094
+    },
+    {
+      "word": "easy",
+      "weight": 6.197
+    },
+    {
+      "word": "awesome",
+      "weight": 5.844
+    },
+    {
+      "word": "amazing",
+      "weight": 5.832
+    },
+    {
+      "word": "good",
+      "weight": 5.717
+    },
+    {
+      "word": "wonderful",
+      "weight": 5.63
+    },
+    {
+      "word": "works",
+      "weight": 5.623
+    },
+    {
+      "word": "favorite",
+      "weight": 5.222
+    },
+    {
+      "word": "pleased",
+      "weight": 4.881
+    },
+    {
+      "word": "nice",
+      "weight": 4.624
+    },
+    {
+      "word": "fantastic",
+      "weight": 4.59
+    },
+    {
+      "word": "fun",
+      "weight": 4.561
+    },
+    {
+      "word": "highly",
+      "weight": 4.521
+    },
+    {
+      "word": "loves",
+      "weight": 4.148
+    },
+    {
+      "word": "loved",
+      "weight": 4.08
+    },
+    {
+      "word": "beautiful",
+      "weight": 4.067
+    },
+    {
+      "word": "enjoy",
+      "weight": 4.012
+    },
+    {
+      "word": "classic",
+      "weight": 3.993
+    },
+    {
+      "word": "perfectly",
+      "weight": 3.835
+    },
+    {
+      "word": "enjoyed",
+      "weight": 3.822
+    },
+    {
+      "word": "not bad",
+      "weight": 3.811
+    },
+    {
+      "word": "not disappointed",
+      "weight": 3.811
+    },
+    {
+      "word": "solid",
+      "weight": 3.69
+    },
+    {
+      "word": "enjoyable",
+      "weight": 3.564
+    },
+    {
+      "word": "can't wait",
+      "weight": 3.537
+    },
+    {
+      "word": "outstanding",
+      "weight": 3.427
+    }
+  ],
+  "top_negative_features": [
+    {
+      "word": "not",
+      "weight": -12.004
+    },
+    {
+      "word": "disappointing",
+      "weight": -9.247
+    },
+    {
+      "word": "disappointed",
+      "weight": -8.835
+    },
+    {
+      "word": "poor",
+      "weight": -8.63
+    },
+    {
+      "word": "worst",
+      "weight": -8.319
+    },
+    {
+      "word": "boring",
+      "weight": -8.106
+    },
+    {
+      "word": "disappointment",
+      "weight": -6.88
+    },
+    {
+      "word": "waste",
+      "weight": -6.77
+    },
+    {
+      "word": "not worth",
+      "weight": -6.671
+    },
+    {
+      "word": "bad",
+      "weight": -6.424
+    },
+    {
+      "word": "nothing",
+      "weight": -6.265
+    },
+    {
+      "word": "terrible",
+      "weight": -5.915
+    },
+    {
+      "word": "poorly",
+      "weight": -5.864
+    },
+    {
+      "word": "money",
+      "weight": -5.471
+    },
+    {
+      "word": "awful",
+      "weight": -5.454
+    },
+    {
+      "word": "unfortunately",
+      "weight": -5.364
+    },
+    {
+      "word": "useless",
+      "weight": -5.208
+    },
+    {
+      "word": "horrible",
+      "weight": -5.135
+    },
+    {
+      "word": "not recommend",
+      "weight": -5.094
+    },
+    {
+      "word": "instead",
+      "weight": -4.935
+    },
+    {
+      "word": "returned",
+      "weight": -4.851
+    },
+    {
+      "word": "don't",
+      "weight": -4.828
+    },
+    {
+      "word": "weak",
+      "weight": -4.54
+    },
+    {
+      "word": "not good",
+      "weight": -4.538
+    },
+    {
+      "word": "junk",
+      "weight": -4.373
+    },
+    {
+      "word": "no",
+      "weight": -4.317
+    },
+    {
+      "word": "broke",
+      "weight": -4.297
+    },
+    {
+      "word": "garbage",
+      "weight": -4.29
+    },
+    {
+      "word": "don't buy",
+      "weight": -4.253
+    },
+    {
+      "word": "beware",
+      "weight": -4.242
+    }
+  ]
+}

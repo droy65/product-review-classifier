@@ -5,9 +5,10 @@ WORKDIR /app
 COPY api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy API and Model directories
+# Copy API, Model, and genuine Data directories
 COPY api /app/api
 COPY model /app/model
+COPY data /app/data
 
 EXPOSE 8000
 
