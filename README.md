@@ -200,11 +200,10 @@ docker compose down
 
 ## 🎨 UI Features Walkthrough
 
-1. **⚡ Live Review Analyzer**: Type or paste any review or select from authentic Amazon review presets. Instantly reveals sentiment badge, confidence percentage, probability breakdown, 1–5 star rating, feature attribution chips, and aspect analysis.
+1. **⚡ Live Review Analyzer**: Type or paste any review or select from authentic Amazon review presets. Instantly reveals sentiment badge, confidence percentage, 1–5 star rating, feature attribution chips, and aspect analysis.
 2. **🛒 Amazon Product Review Hub**: Browse verified reviews for flagship gadgets (AirPods Pro, Sony Headphones, Kindle, Instant Pot) or enter custom ASINs. View real-time Customer Satisfaction Index and Net Sentiment Scores.
 3. **📂 Batch CSV Classifier**: Upload any CSV or Excel file or load the built-in 100-review sample. Process hundreds of reviews in seconds with live progress tracking, sentiment and star distribution charts, and one-click enriched CSV download.
 4. **📊 Genuine Dataset & Model Intelligence**: Deep dive into the 35,000-review dataset with category and rating charts, full model metrics, and top predictive vocabulary words.
-5. **🔌 API Sandbox & Integrations**: Live interactive API query tool with ready-to-copy Python, cURL, and JavaScript integration snippets.
 
 ---
 

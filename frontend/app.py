@@ -63,45 +63,13 @@ st.markdown("""
     /* Hero Header */
     .hero-container {
         text-align: center;
-        padding: 2rem 1rem 1.5rem;
+        padding: 2.2rem 1rem 2rem;
         position: relative;
-    }
-    
-    .badge-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(14, 165, 233, 0.15);
-        border: 1px solid rgba(56, 189, 248, 0.35);
-        color: #38bdf8;
-        padding: 0.4rem 1.2rem;
-        border-radius: 9999px;
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 1.1rem;
-        box-shadow: 0 0 24px rgba(56, 189, 248, 0.2);
-    }
-    
-    .pulse-dot {
-        width: 8px;
-        height: 8px;
-        background-color: #38bdf8;
-        border-radius: 50%;
-        display: inline-block;
-        box-shadow: 0 0 10px #38bdf8;
-        animation: pulse 1.8s infinite;
-    }
-    
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.4); opacity: 0.5; }
     }
 
     .hero-heading {
         font-family: 'Syne', sans-serif !important;
-        font-size: clamp(2.4rem, 4.5vw, 3.8rem) !important;
+        font-size: clamp(2.5rem, 5vw, 4rem) !important;
         font-weight: 800 !important;
         line-height: 1.12 !important;
         letter-spacing: -0.03em !important;
@@ -116,40 +84,12 @@ st.markdown("""
     }
 
     .hero-subtitle {
-        font-size: 1.08rem !important;
+        font-size: 1.12rem !important;
         color: #94a3b8 !important;
         font-weight: 400 !important;
         max-width: 680px !important;
-        margin: 0 auto 1.8rem !important;
+        margin: 0 auto !important;
         line-height: 1.65 !important;
-    }
-
-    /* Quick Stats Bar */
-    .stats-bar {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-        margin-bottom: 2rem;
-        padding: 0.85rem 1.6rem;
-        background: rgba(15, 23, 42, 0.75);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        backdrop-filter: blur(12px);
-    }
-    
-    .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-size: 0.9rem;
-        color: #e2e8f0;
-    }
-    
-    .stat-val {
-        font-family: 'Syne', sans-serif;
-        font-weight: 700;
-        color: #38bdf8;
     }
 
     /* Tabs Styling */
@@ -164,11 +104,11 @@ st.markdown("""
     
     .stTabs [data-baseweb="tab"] {
         font-family: 'Syne', sans-serif !important;
-        font-size: 0.92rem !important;
+        font-size: 0.95rem !important;
         font-weight: 600 !important;
         letter-spacing: 0.02em !important;
         color: #94a3b8 !important;
-        padding: 0.75rem 1.4rem !important;
+        padding: 0.8rem 1.6rem !important;
         border-radius: 10px !important;
         border: none !important;
         transition: all 0.2s ease !important;
@@ -204,12 +144,12 @@ st.markdown("""
     /* Result Card */
     .result-banner {
         border-radius: 16px;
-        padding: 1.8rem;
+        padding: 1.8rem 2rem;
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 1rem;
         border: 1px solid;
         animation: fadeIn 0.35s ease-out;
     }
@@ -337,20 +277,11 @@ st.markdown("""
 # ── HERO HEADER ──────────────────────────────────────────────────
 st.markdown("""
 <div class="hero-container">
-    <div class="badge-pill">
-        <span class="pulse-dot"></span> Powered by 35,000+ Genuine Amazon Customer Reviews
-    </div>
     <h1 class="hero-heading">ReviewLens <span class="gradient-text">AI Studio</span></h1>
     <p class="hero-subtitle">
         Enterprise sentiment classification, aspect intelligence, and star-rating prediction 
         calibrated on authentic Amazon consumer reviews.
     </p>
-    <div class="stats-bar">
-        <div class="stat-item">📚 Dataset: <span class="stat-val">35,000 Genuine Reviews</span></div>
-        <div class="stat-item">🎯 Test Accuracy: <span class="stat-val">89.3%</span></div>
-        <div class="stat-item">🔤 Vocabulary: <span class="stat-val">40,000 N-Grams</span></div>
-        <div class="stat-item">⚡ Engine: <span class="stat-val">Negation-Preserving TF-IDF</span></div>
-    </div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -359,8 +290,7 @@ tabs = st.tabs([
     "⚡  Live Review Analyzer",
     "🛒  Amazon Product Review Hub",
     "📂  Batch CSV Classifier",
-    "📊  Genuine Dataset & Model Intelligence",
-    "🔌  API Sandbox & Integrations"
+    "📊  Genuine Dataset & Model Intelligence"
 ])
 
 # ═════════════════════════════════════════════════════════════════
@@ -389,7 +319,7 @@ with tabs[0]:
         if preset_content:
             st.session_state["review_input_val"] = preset_content
 
-    current_val = st.session_state.get("review_input_val", default_text if 'default_text' in locals() else "")
+    current_val = st.session_state.get("review_input_val", "")
     if preset_content and not current_val:
         current_val = preset_content
 
@@ -427,8 +357,6 @@ with tabs[0]:
         data = st.session_state["single_result"]
         sentiment = data["sentiment"]
         conf_pct = int(data["confidence"] * 100)
-        prob_pos = data["prob_positive"]
-        prob_neg = data["prob_negative"]
         stars = data["estimated_stars"]
         star_display = data["star_display"]
         signals = data.get("key_signals", [])
@@ -448,7 +376,7 @@ with tabs[0]:
             badge_color = "#fbbf24"
             icon = "⚖️"
 
-        # Result Banner
+        # Result Banner (Clean: No raw comments or extra probability bar)
         st.markdown(f"""
         <div class="result-banner {banner_cls}">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
@@ -464,18 +392,6 @@ with tabs[0]:
                     <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:#94a3b8;font-weight:600;">Estimated Amazon Rating</div>
                     <div style="font-size:1.6rem;letter-spacing:0.1em;margin-top:0.2rem;">{star_display}</div>
                     <div style="font-size:0.85rem;color:#94a3b8;">({stars} out of 5 stars)</div>
-                </div>
-            </div>
-            
-            <!-- Probability Distribution Bar -->
-            <div style="margin-top:0.5rem;">
-                <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:#cbd5e1;margin-bottom:0.3rem;">
-                    <span>Negative: {int(prob_neg*100)}%</span>
-                    <span>Positive: {int(prob_pos*100)}%</span>
-                </div>
-                <div style="height:8px;background:rgba(255,255,255,0.1);border-radius:99px;overflow:hidden;display:flex;">
-                    <div style="width:{int(prob_neg*100)}%;background:linear-gradient(90deg,#ef4444,#f87171);"></div>
-                    <div style="width:{int(prob_pos*100)}%;background:linear-gradient(90deg,#10b981,#34d399);"></div>
                 </div>
             </div>
         </div>
@@ -812,49 +728,3 @@ with tabs[3]:
         if top_neg:
             neg_df = pd.DataFrame(top_neg[:12])
             st.dataframe(neg_df, use_container_width=True)
-
-# ═════════════════════════════════════════════════════════════════
-# TAB 5: DEVELOPER API SANDBOX
-# ═════════════════════════════════════════════════════════════════
-with tabs[4]:
-    st.markdown("### 🔌 Developer API Sandbox & Integration Guides")
-    st.markdown('<p style="color:#94a3b8;margin-bottom:1.5rem;">FastAPI REST endpoints are live and fully documented with OpenAPI/Swagger.</p>', unsafe_allow_html=True)
-
-    col_api_stat1, col_api_stat2 = st.columns([1, 2])
-    with col_api_stat1:
-        st.markdown(f"""
-        <div class="glass-card">
-            <div style="font-size:0.8rem;text-transform:uppercase;color:#94a3b8;font-weight:600;">API Server Endpoint</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:#38bdf8;margin:0.4rem 0;">{API_URL}</div>
-            <div style="font-size:0.85rem;color:#64748b;margin-bottom:1rem;">Documentation: <a href="{API_URL}/docs" target="_blank" style="color:#818cf8;">Swagger UI /docs</a></div>
-            <span style="background:rgba(16,185,129,0.18);color:#34d399;padding:0.3rem 0.7rem;border-radius:4px;font-size:0.78rem;font-weight:700;">● SERVICE HEALTHY</span>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col_api_stat2:
-        st.markdown("##### Interactive API Tester")
-        sample_api_query = st.text_input("Test Query", "The sound quality is crisp and battery lasts all week!")
-        if st.button("Send Test HTTP POST /predict"):
-            try:
-                res = requests.post(f"{API_URL}/predict", json={"text": sample_api_query}, timeout=5)
-                st.json(res.json())
-            except Exception as e:
-                st.error(f"Error calling API: {e}")
-
-    st.markdown("#### 💻 Integration Code Snippets")
-    st.code(f"""
-import requests
-
-# Single review prediction
-url = "{API_URL}/predict"
-payload = {{
-    "text": "The camera quality on this phone is unbelievable! Highly recommended."
-}}
-response = requests.post(url, json=payload)
-data = response.json()
-
-print("Sentiment:", data["sentiment"])
-print("Confidence:", data["confidence"])
-print("Estimated Stars:", data["estimated_stars"])
-print("Key Positive Words:", [s["word"] for s in data["key_signals"] if s["impact"] == "Positive"])
-""", language="python")
